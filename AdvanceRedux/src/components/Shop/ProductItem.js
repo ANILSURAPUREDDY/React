@@ -9,10 +9,52 @@ const ProductItem = (props) => {
   const { title, price, description, id } = props;
 
   const dispatch = useDispatch();
+  // const cart = useSelector((state) => state.cart);
 
   const addToCartHandler = () => {
-    console.log("from product Item", title, price, description, id);
+    // console.log("from product Item", title, price, description, id);
     dispatch(cartActions.addItemToCart({ id, title, price }));
+
+    // const newTotalQuantity = cart.totalQuantity + 1;
+
+    // const updatedItems = cart.items.slice();
+    // const existingItem = updatedItems.find((item) => item.id === id);
+    // if (existingItem) {
+    //   const updatedItem = { ...existingItem };
+    //   updatedItem.quantity++;
+    //   updatedItem.totalPrice = updatedItem.totalPrice + price;
+    //   const existingItemIndex = updatedItems.findIndex(
+    //     (item) => item.id === id
+    //   );
+
+    //   updatedItems[existingItemIndex] = updatedItem;
+    // } else {
+    //   updatedItems.push({
+    //     id,
+    //     price,
+    //     quantity: 1,
+    //     totalPrice: price,
+    //     name: title,
+    //   });
+    // }
+
+    // const newCart = {
+    //   totalQuantity: newTotalQuantity,
+    //   items: updatedItems,
+    // };
+
+    // dispatch(cartActions.replaceCart(newCart));
+
+    // and then send Http request
+    // fetch('firebase-url', { method: 'POST', body: JSON.stringify(newCart) })
+
+    // dispatch(
+    //   cartActions.addItemToCart({
+    //     id,
+    //     title,
+    //     price,
+    //   })
+    // );
   };
 
   return (
